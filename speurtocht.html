@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speurtocht Code Invoer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            font-size: 18px;
+            padding: 10px;
+            margin: 10px;
+        }
+        #resultaat {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Voer de geheime code in</h1>
+    <input type="text" id="codeInput" placeholder="Geheime code">
+    <button onclick="controleerCode()">Controleer</button>
+    <p id="resultaat"></p>
+
+    <script>
+        function controleerCode() {
+            const juisteCode = "MOTTEN"; // De geheime code
+            const ingevoerdeCode = document.getElementById("codeInput").value.toUpperCase();
+            const resultaat = document.getElementById("resultaat");
+
+            if (ingevoerdeCode === juisteCode) {
+                resultaat.innerHTML = "✅ Correct! De volgende locatie is: <b>Bij de oude molen</b>";
+                resultaat.style.color = "green";
+            } else {
+                resultaat.innerHTML = "❌ Fout! Probeer het opnieuw.";
+                resultaat.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
